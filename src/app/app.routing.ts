@@ -201,6 +201,12 @@ export const appRoutes: Route[] = [
                 {path: 'guides', loadChildren: () => import('app/modules/admin/docs/guides/guides.module').then(m => m.GuidesModule)}
             ]},
 
+            // Motor Vehicle Integration
+
+            {path: 'motor', children: [
+                {path: '', loadChildren: () => import('app/commerical_New/commerical/commerical.module').then(m => m.CommericalModule)},
+            ]},
+
             // 404 & Catch all
             {path: '404-not-found', pathMatch: 'full', loadChildren: () => import('app/modules/admin/pages/error/error-404/error-404.module').then(m => m.Error404Module)},
             {path: '**', redirectTo: '404-not-found'}
